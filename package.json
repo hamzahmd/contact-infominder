@@ -1,0 +1,25 @@
+{
+  "name": "contact-infominder",
+  "version": "1.0.0",
+  "description": "This is a real-time project and a Full stack MERN application with React hooks, context and JWT authentication. In this application, you can store and manage you contact details and information by creating your own account with authentication and no one can see the details except you.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.6",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.5"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.12"
+  }
+}
