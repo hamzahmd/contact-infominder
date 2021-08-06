@@ -15,8 +15,6 @@ The application is hosted on Heroku
 - For database, I used a MongoDB which is a NoSQL Database (Document Database having JSON format).
 - For easy setup, I used MongoDB Atlas which is a cloud database.
 
-> Postman service is used to make requests to backend without using client side react for testing.
-
 ## Usage
 
 Install dependencies
