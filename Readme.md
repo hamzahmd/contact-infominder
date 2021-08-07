@@ -6,14 +6,37 @@ This is a real-time project and a Full stack MERN application with React hooks, 
 
 The application is hosted on Heroku
 
-## Technical Details
+## Highlights
 
 > Custom API or backend built with Express, NodeJS and MongoDB database is used alongwith the frontend built with ReactJS.
 
-### Database Setup
+## Database Setup
 
 - For database, I used a MongoDB which is a NoSQL Database (Document Database having JSON format).
 - For easy setup, I used MongoDB Atlas which is a cloud database.
+
+## Libraries and Frameworks - Dependencies & DevDependencies
+
+### Backend:
+
+- express (Web Framework to handle routing)
+- bcryptjs (Hashing our password to make them secure)
+- jsonwebtoken (JWT Authentication to access protective routes on the server)
+- config (for globle variable on backend)
+- express-validator (to validator data in the body like email)
+- mongoose (abstraction layer for our DB and to create models)
+- nodemon (DevDependency that allow us to keep watching server side changes)
+- concurrently (DevDependency that allow us to run backend and frondend at the same time)
+
+### Frontend:
+
+- create-react-app (to install the biolerplate of react)
+- axios (library to fetch the http requests and the Custom API)
+- @material-ui/core (React UI framework)
+- uuid (to generate random keys for development before the integration with backend)
+- react-transition-group (for react animations)
+
+All these dependencies are installed by the Node Package Manager (NPM)
 
 ## Usage
 
