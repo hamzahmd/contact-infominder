@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ContactsIcon from '@material-ui/icons/Contacts';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { Box } from '@material-ui/core';
+import {
+  Box,
+  AppBar,
+  Toolbar,
+  makeStyles,
+  Button,
+  IconButton,
+  Typography,
+} from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = ({ title }) => {
   const classes = useStyles();
   return (
-    <AppBar position='static' color='primary' className={classes.root}>
+    <AppBar position='sticky' color='primary' className={classes.root}>
       <Toolbar>
         <IconButton
           edge='start'
@@ -38,7 +40,12 @@ const Navbar = ({ title }) => {
           {title}
         </Typography>
         <Box pr={2}>
-          <Button component={Link} to='/' variant='contained' color='secondary'>
+          <Button
+            component={Link}
+            to='/'
+            variant='contained'
+            color='transprent'
+          >
             Home
           </Button>
         </Box>
@@ -46,7 +53,7 @@ const Navbar = ({ title }) => {
           component={Link}
           to='/about'
           variant='contained'
-          color='secondary'
+          color='ransprent'
         >
           About
         </Button>

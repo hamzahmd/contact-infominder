@@ -36,6 +36,13 @@ const ContactState = (props) => {
         phone: '02032420220',
         type: 'personal',
       },
+      {
+        id: 4,
+        name: 'talha',
+        email: 'talha@hamza.com',
+        phone: '02033420220',
+        type: 'professional',
+      },
     ],
   };
 
