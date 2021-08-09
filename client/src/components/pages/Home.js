@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Contacts from '../contacts/Contacts';
-import { Container, Grid, makeStyles } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
+import ContactForm from '../contacts/ContactForm';
 
 const Home = () => {
   return (
@@ -8,7 +9,7 @@ const Home = () => {
       <Fragment>
         <Grid container>
           <Grid item xs={12} md={7}>
-            <h3>Form</h3>
+            <ContactForm />
           </Grid>
           <Grid item xs={12} md={5}>
             <Contacts />
