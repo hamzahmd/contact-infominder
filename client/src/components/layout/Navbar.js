@@ -51,6 +51,26 @@ const Navbar = ({ title }) => {
             Home
           </Button>
         </Box>
+        <Box pr={2}>
+          <Button
+            component={Link}
+            to='/register'
+            variant='contained'
+            color='transprent'
+          >
+            Register
+          </Button>
+        </Box>
+        <Box pr={2}>
+          <Button
+            component={Link}
+            to='/login'
+            variant='contained'
+            color='transprent'
+          >
+            Login
+          </Button>
+        </Box>
         <Button
           component={Link}
           to='/about'
