@@ -39,9 +39,10 @@ const ContactItem = ({ contact }) => {
           style={{
             display: 'flex',
             alignItems: 'center',
+            paddingBottom: '0.5rem',
           }}
         >
-          <EmailRoundedIcon /> {email}
+          <EmailRoundedIcon style={{ marginRight: '0.5rem' }} /> {email}
         </p>
       ) : (
         'null'
@@ -53,7 +54,7 @@ const ContactItem = ({ contact }) => {
             alignItems: 'center',
           }}
         >
-          <CallIcon /> {phone}
+          <CallIcon style={{ marginRight: '0.5rem' }} /> {phone}
         </p>
       ) : (
         'null'
@@ -61,7 +62,7 @@ const ContactItem = ({ contact }) => {
       <div
         style={{
           display: 'flex',
-          marginTop: '0.5rem',
+          marginTop: '0.8rem',
         }}
       >
         <Box pr={1}>

@@ -9,6 +9,7 @@ import {
   Button,
   Card,
   Box,
+  FormControl,
 } from '@material-ui/core';
 
 const ContactForm = () => {
@@ -52,21 +53,23 @@ const ContactForm = () => {
     clearCurrent();
   };
   return (
-    <Card style={{ margin: '1rem 0', padding: '1.5rem 2rem' }}>
+    <Card
+      style={{ margin: '1rem 0', padding: '1.5rem 2rem', textAlign: 'center' }}
+    >
       <form onSubmit={onSubmit}>
-        <h2 style={{ paddingBottom: '1rem', textAlign: 'center' }}>
-          {current ? 'Edit the Contact' : 'Add the Contact Info!'}
-        </h2>
-        <TextField
-          id='outlined-basic'
-          type='text'
-          label='Name'
-          name='name'
-          size='small'
-          variant='outlined'
-          value={name}
-          onChange={onChange}
-        />
+        <h2>{current ? 'Edit the Contact' : 'Add a New Contact'}</h2>
+        <Box pb={2} pt={2}>
+          <TextField
+            id='outlined-basic'
+            type='text'
+            label='Name'
+            name='name'
+            size='small'
+            variant='outlined'
+            value={name}
+            onChange={onChange}
+          />
+        </Box>
         <TextField
           id='outlined-basic'
           type='email'
@@ -77,37 +80,44 @@ const ContactForm = () => {
           value={email}
           onChange={onChange}
         />
-        <TextField
-          id='outlined-basic'
-          type='tel'
-          label='Phone'
-          size='small'
-          name='phone'
-          variant='outlined'
-          // pattern='+[0-9]{2}-[0-9]{3}-[0-9]{7}'
-          value={phone}
-          onChange={onChange}
-        />
-
-        <FormLabel component='legend' style={{ paddingTop: '1rem' }}>
-          Contact Type
-        </FormLabel>
-        <RadioGroup aria-label='contact-type' name='type' onChange={onChange}>
-          <FormControlLabel
-            value='personal'
-            control={<Radio />}
-            label='Personal'
-            checked={type === 'personal'}
+        <Box pt={2} pb={2}>
+          <TextField
+            id='outlined-basic'
+            type='number'
+            label='Phone'
+            size='small'
+            name='phone'
+            variant='outlined'
+            // pattern='+[0-9]{2}-[0-9]{3}-[0-9]{7}'
+            value={phone}
+            onChange={onChange}
           />
-          <FormControlLabel
-            value='professional'
-            control={<Radio />}
-            label='Professional'
-            checked={type === 'professional'}
-          />
-        </RadioGroup>
+        </Box>
+        <FormControl component='fieldset'>
+          <FormLabel component='legend'>Contact Type</FormLabel>
+          <RadioGroup aria-label='contact-type' name='type' onChange={onChange}>
+            <FormControlLabel
+              value='personal'
+              control={<Radio />}
+              label='Personal'
+              checked={type === 'personal'}
+            />
+            <FormControlLabel
+              value='professional'
+              control={<Radio />}
+              label='Professional'
+              checked={type === 'professional'}
+            />
+          </RadioGroup>
+        </FormControl>
 
-        <div style={{ display: 'flex' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: '1rem',
+          }}
+        >
           <Box pr={1}>
             <Button type='submit' variant='contained' color='primary'>
               {current ? 'Update Contact' : 'Add Contact'}

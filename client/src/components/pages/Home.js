@@ -1,21 +1,21 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Contacts from '../contacts/Contacts';
 import { Container, Grid } from '@material-ui/core';
 import ContactForm from '../contacts/ContactForm';
+import ContactFilter from '../contacts/ContactFilter';
 
 const Home = () => {
   return (
     <Container>
-      <Fragment>
-        <Grid container>
-          <Grid item xs={12} md={7}>
-            <ContactForm />
-          </Grid>
-          <Grid item xs={12} md={5}>
-            <Contacts />
-          </Grid>
+      <Grid container>
+        <Grid item xs={12} md={4}>
+          <ContactForm />
         </Grid>
-      </Fragment>
+        <Grid item xs={12} md={8}>
+          <ContactFilter />
+          <Contacts />
+        </Grid>
+      </Grid>
     </Container>
   );
 };
