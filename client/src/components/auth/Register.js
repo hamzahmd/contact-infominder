@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import AlertContext from '../../context/alert/alertContext';
 import { Button, Card, Box, TextField, Container } from '@material-ui/core';
+
 const Register = () => {
+  const alertContext = useContext(AlertContext);
+  const { setAlert } = alertContext;
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -12,7 +16,13 @@ const Register = () => {
   const onChange = (e) => setUser({ ...user, [e.target.name]: e.target.value });
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log('Registered');
+    if (name === '' || email === '' || password === '') {
+      setAlert('Please Enter All Fields', 'danger');
+    } else if (password !== password2) {
+      setAlert('Passwords do not match', 'danger');
+    } else {
+      console.log('Registered');
+    }
   };
 
   return (
@@ -36,6 +46,7 @@ const Register = () => {
               variant='outlined'
               value={name}
               onChange={onChange}
+              required
             />
           </Box>
           <TextField
@@ -47,6 +58,7 @@ const Register = () => {
             variant='outlined'
             value={email}
             onChange={onChange}
+            required
           />
           <Box pt={2} pb={2}>
             <TextField
@@ -58,6 +70,7 @@ const Register = () => {
               variant='outlined'
               value={password}
               onChange={onChange}
+              required
             />
           </Box>
           <TextField
@@ -69,6 +82,7 @@ const Register = () => {
             variant='outlined'
             value={password2}
             onChange={onChange}
+            required
           />
 
           <div

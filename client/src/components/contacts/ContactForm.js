@@ -10,6 +10,7 @@ import {
   Card,
   Box,
   FormControl,
+  Container,
 } from '@material-ui/core';
 
 const ContactForm = () => {
@@ -53,89 +54,99 @@ const ContactForm = () => {
     clearCurrent();
   };
   return (
-    <Card
-      style={{ margin: '1rem 0', padding: '1.5rem 2rem', textAlign: 'center' }}
-    >
-      <form onSubmit={onSubmit}>
-        <h2>{current ? 'Edit the Contact' : 'Add a New Contact'}</h2>
-        <Box pb={2} pt={2}>
-          <TextField
-            id='outlined-basic'
-            type='text'
-            label='Name'
-            name='name'
-            size='small'
-            variant='outlined'
-            value={name}
-            onChange={onChange}
-          />
-        </Box>
-        <TextField
-          id='outlined-basic'
-          type='email'
-          label='Email'
-          name='email'
-          size='small'
-          variant='outlined'
-          value={email}
-          onChange={onChange}
-        />
-        <Box pt={2} pb={2}>
-          <TextField
-            id='outlined-basic'
-            type='number'
-            label='Phone'
-            size='small'
-            name='phone'
-            variant='outlined'
-            // pattern='+[0-9]{2}-[0-9]{3}-[0-9]{7}'
-            value={phone}
-            onChange={onChange}
-          />
-        </Box>
-        <FormControl component='fieldset'>
-          <FormLabel component='legend'>Contact Type</FormLabel>
-          <RadioGroup aria-label='contact-type' name='type' onChange={onChange}>
-            <FormControlLabel
-              value='personal'
-              control={<Radio />}
-              label='Personal'
-              checked={type === 'personal'}
+    <Container maxWidth='xs'>
+      <Card
+        style={{
+          margin: '1rem 0',
+          padding: '1.5rem 2rem',
+          textAlign: 'center',
+        }}
+      >
+        <form onSubmit={onSubmit}>
+          <h2>{current ? 'Edit the Contact' : 'Add a New Contact'}</h2>
+          <Box pb={2} pt={2}>
+            <TextField
+              id='outlined-basic'
+              type='text'
+              label='Name'
+              name='name'
+              size='small'
+              variant='outlined'
+              value={name}
+              onChange={onChange}
             />
-            <FormControlLabel
-              value='professional'
-              control={<Radio />}
-              label='Professional'
-              checked={type === 'professional'}
-            />
-          </RadioGroup>
-        </FormControl>
-
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            paddingTop: '1rem',
-          }}
-        >
-          <Box pr={1}>
-            <Button type='submit' variant='contained' color='primary'>
-              {current ? 'Update Contact' : 'Add Contact'}
-            </Button>
           </Box>
-          {current !== null ? (
-            <Button
-              type='submit'
-              variant='contained'
-              color='secondary'
-              onClick={clearAll}
+          <TextField
+            id='outlined-basic'
+            type='email'
+            label='Email'
+            name='email'
+            size='small'
+            variant='outlined'
+            value={email}
+            onChange={onChange}
+          />
+          <Box pt={2} pb={2}>
+            <TextField
+              id='outlined-basic'
+              type='number'
+              label='Phone'
+              size='small'
+              name='phone'
+              variant='outlined'
+              // pattern='+[0-9]{2}-[0-9]{3}-[0-9]{7}'
+              value={phone}
+              onChange={onChange}
+            />
+          </Box>
+          <FormControl component='fieldset'>
+            <FormLabel component='legend'>Contact Type</FormLabel>
+            <RadioGroup
+              aria-label='contact-type'
+              name='type'
+              onChange={onChange}
             >
-              Clear
-            </Button>
-          ) : null}
-        </div>
-      </form>
-    </Card>
+              <FormControlLabel
+                value='personal'
+                control={<Radio />}
+                label='Personal'
+                checked={type === 'personal'}
+              />
+              <FormControlLabel
+                value='professional'
+                control={<Radio />}
+                label='Professional'
+                checked={type === 'professional'}
+              />
+            </RadioGroup>
+          </FormControl>
+
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              paddingTop: '1rem',
+            }}
+          >
+            <Box pr={1}>
+              <Button type='submit' variant='contained' color='primary'>
+                {current ? 'Update Contact' : 'Add Contact'}
+              </Button>
+            </Box>
+            {current !== null ? (
+              <Button
+                type='submit'
+                variant='contained'
+                color='secondary'
+                onClick={clearAll}
+              >
+                Clear
+              </Button>
+            ) : null}
+          </div>
+        </form>
+      </Card>
+    </Container>
   );
 };
 
