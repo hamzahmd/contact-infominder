@@ -10,11 +10,6 @@ The application is hosted on Heroku
 
 > Custom API or backend built with Express, NodeJS and MongoDB database is used alongwith the frontend built with ReactJS.
 
-## Database Setup
-
-- For database, I used a MongoDB which is a NoSQL Database (Document Database having JSON format).
-- For easy setup, I used MongoDB Atlas which is a cloud database.
-
 ## Libraries and Frameworks - Dependencies & DevDependencies
 
 ### Backend:
@@ -34,9 +29,13 @@ The application is hosted on Heroku
 - axios (library to fetch the http requests and the Custom API)
 - @material-ui/core (React UI framework)
 - uuid (to generate random keys for development before the integration with backend)
-- react-transition-group (for react animations)
 
 All these dependencies are installed by the Node Package Manager (NPM)
+
+## Database Setup
+
+- For database, I used a MongoDB which is a NoSQL Database (Document Database having JSON format).
+- For easy setup, I used MongoDB Atlas which is a cloud database.
 
 ## Usage
 
