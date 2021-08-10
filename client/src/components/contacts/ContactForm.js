@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ContactContext from '../../context/contact/contactContext';
 import {
   TextField,
@@ -8,10 +8,24 @@ import {
   FormLabel,
   Button,
   Card,
+  Box,
 } from '@material-ui/core';
 
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
+  const { addContact, current, updateContact, clearCurrent } = contactContext;
+  useEffect(() => {
+    if (current !== null) {
+      setContact(current);
+    } else {
+      setContact({
+        name: '',
+        email: '',
+        phone: '',
+        type: 'personal',
+      });
+    }
+  }, [contactContext, current]);
   const [contact, setContact] = useState({
     name: '',
     email: '',
@@ -26,19 +40,22 @@ const ContactForm = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    contactContext.addContact(contact);
-    setContact({
-      name: '',
-      email: '',
-      phone: '',
-      type: 'personal',
-    });
+    if (current === null) {
+      addContact(contact);
+    } else {
+      updateContact(contact);
+    }
+    clearAll();
+  };
+
+  const clearAll = () => {
+    clearCurrent();
   };
   return (
     <Card style={{ margin: '1rem 0', padding: '1.5rem 2rem' }}>
       <form onSubmit={onSubmit}>
         <h2 style={{ paddingBottom: '1rem', textAlign: 'center' }}>
-          Add Your Important Contacts!
+          {current ? 'Edit the Contact' : 'Add the Contact Info!'}
         </h2>
         <TextField
           id='outlined-basic'
@@ -89,9 +106,24 @@ const ContactForm = () => {
             checked={type === 'professional'}
           />
         </RadioGroup>
-        <Button type='submit' variant='contained' color='primary'>
-          Add Contact
-        </Button>
+
+        <div style={{ display: 'flex' }}>
+          <Box pr={1}>
+            <Button type='submit' variant='contained' color='primary'>
+              {current ? 'Update Contact' : 'Add Contact'}
+            </Button>
+          </Box>
+          {current !== null ? (
+            <Button
+              type='submit'
+              variant='contained'
+              color='secondary'
+              onClick={clearAll}
+            >
+              Clear
+            </Button>
+          ) : null}
+        </div>
       </form>
     </Card>
   );
