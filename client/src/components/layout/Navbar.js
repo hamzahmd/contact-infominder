@@ -30,6 +30,8 @@ const Navbar = ({ title }) => {
     <AppBar position='sticky' color='primary' className={classes.root}>
       <Toolbar>
         <IconButton
+          component={Link}
+          to='/'
           edge='start'
           className={classes.contactIcon}
           color='inherit'
