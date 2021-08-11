@@ -1,10 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import AlertContext from '../../context/alert/alertContext';
+import AuthContext from '../../context/auth/authContext';
 import { Button, Card, Box, TextField, Container } from '@material-ui/core';
 
 const Register = () => {
   const alertContext = useContext(AlertContext);
+  const authContext = useContext(AuthContext);
   const { setAlert } = alertContext;
+  const { register, error, clearErrors } = authContext;
+  useEffect(() => {
+    if (error === 'User Already Exists') {
+      setAlert(error, 'danger');
+      clearErrors();
+    }
+  }, [error]);
+
   const [user, setUser] = useState({
     name: '',
     email: '',
@@ -21,7 +31,11 @@ const Register = () => {
     } else if (password !== password2) {
       setAlert('Passwords do not match', 'danger');
     } else {
-      console.log('Registered');
+      register({
+        name,
+        email,
+        password,
+      });
     }
   };
 
