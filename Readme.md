@@ -2,9 +2,10 @@
 
 This is a Full stack MERN application with React hooks, context and JWT authentication. In this application, you can store and manage you contact details and information by creating your own account with authentication. The Contacts have full CRUD functionalities and are linked with the database.
 
-## Live Preview
+### [Live Preview](https://infominder.herokuapp.com/)
 
-The application is hosted on Heroku
+![Admin](https://i.ibb.co/cy4LFQT/infominder-admin.jpg)
+![LoginPages](https://i.ibb.co/HnKpgD6/Infominder-Login-Page.png)
 
 ## Highlights
 
@@ -36,6 +37,10 @@ All these dependencies are installed by the Node Package Manager (NPM)
 
 - For database, I used a MongoDB which is a NoSQL Database (Document Database having JSON format).
 - For easy setup, I used MongoDB Atlas which is a cloud database.
+
+## Hosting
+
+The application is hosted on Heroku with heroku cli.
 
 ## Usage
 
