@@ -40,7 +40,7 @@ const Navbar = ({ title }) => {
       <Box pr={1}>
         <IconButton
           component={Link}
-          to='/login'
+          to='/'
           variant='contained'
           color='inherit'
           onClick={onLogout}

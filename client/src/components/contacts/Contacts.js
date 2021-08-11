@@ -29,7 +29,12 @@ const Contacts = () => {
             ))
           : contacts.map((contact) => (
               <Grid item xs={12} md={6}>
-                <Card style={{ margin: '1rem', padding: ' 1rem' }}>
+                <Card
+                  style={{
+                    margin: '1rem',
+                    padding: ' 1rem',
+                  }}
+                >
                   <ContactItem key={contact.id} contact={contact} />
                 </Card>
               </Grid>

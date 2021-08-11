@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import ContactContext from '../../context/contact/contactContext';
-import { TextField, Box } from '@material-ui/core';
+import { TextField, Box, Card, Container } from '@material-ui/core';
 
 const ContactFilter = () => {
   const contactContext = useContext(ContactContext);
@@ -20,20 +20,28 @@ const ContactFilter = () => {
     }
   };
   return (
-    <Box ml={5} mt={2}>
-      <form>
-        <TextField
-          id='outlined-basic'
-          inputRef={text}
-          type='text'
-          label='Filter Contacts'
-          size='small'
-          variant='outlined'
-          color='primary'
-          onChange={onChange}
-        />
-      </form>
-    </Box>
+    <Container>
+      <Card
+        style={{
+          margin: '1rem 1rem 0 1rem',
+          padding: ' 1rem',
+          display: 'inline-block',
+        }}
+      >
+        <form>
+          <TextField
+            id='outlined-basic'
+            inputRef={text}
+            type='text'
+            label='Filter Contacts'
+            size='small'
+            variant='outlined'
+            color='primary'
+            onChange={onChange}
+          />
+        </form>
+      </Card>
+    </Container>
   );
 };
 
