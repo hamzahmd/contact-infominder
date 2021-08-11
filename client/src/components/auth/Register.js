@@ -1,7 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
-import { Button, Card, Box, TextField, Container } from '@material-ui/core';
+import {
+  Button,
+  Card,
+  Box,
+  TextField,
+  Container,
+  Typography,
+} from '@material-ui/core';
 
 const Register = (props) => {
   const alertContext = useContext(AlertContext);
@@ -108,6 +116,7 @@ const Register = (props) => {
               display: 'flex',
               justifyContent: 'center',
               paddingTop: '1rem',
+              marginBottom: '0.5rem',
             }}
           >
             <Box pr={1}>
@@ -116,6 +125,12 @@ const Register = (props) => {
               </Button>
             </Box>
           </div>
+          <Typography color='initial'>
+            Already have an account?
+            <Button component={Link} color='primary' to='/login'>
+              Log in
+            </Button>
+          </Typography>
         </form>
       </Card>
     </Container>
