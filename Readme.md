@@ -6,8 +6,6 @@ This is a Full stack MERN application with React hooks, context and JWT authenti
 
 The application is hosted on Heroku
 
-![Login Page](https://drive.google.com/file/d/1oDC_xM6Wh3ObrV0wp1MJfjTzEPFSN_3U/view?usp=sharing)
-
 ## Highlights
 
 > Custom API or backend built with Express, NodeJS and MongoDB database is used alongwith the frontend built with ReactJS.
