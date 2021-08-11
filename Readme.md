@@ -1,10 +1,12 @@
 # Contact InfoMinder
 
-This is a real-time project and a Full stack MERN application with React hooks, context and JWT authentication. In this application, you can store and manage you contact details and information by creating your own account with authentication and no one can see the details except you.
+This is a Full stack MERN application with React hooks, context and JWT authentication. In this application, you can store and manage you contact details and information by creating your own account with authentication. The Contacts have full CRUD functionalities and are linked with the database.
 
 ## Live Preview
 
 The application is hosted on Heroku
+
+![Login Page](https://drive.google.com/drive/u/0/folders/1Kybl57FoV3Q046W9M7M465fVRjY53_CQ)
 
 ## Highlights
 
