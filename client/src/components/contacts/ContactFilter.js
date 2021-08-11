@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import ContactContext from '../../context/contact/contactContext';
-import { TextField, Box, Card, Container } from '@material-ui/core';
+import { TextField, Card, Container } from '@material-ui/core';
 
 const ContactFilter = () => {
   const contactContext = useContext(ContactContext);

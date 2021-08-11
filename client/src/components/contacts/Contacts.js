@@ -23,7 +23,7 @@ const Contacts = () => {
           ? filtered.map((contact) => (
               <Grid item xs={12} md={6}>
                 <Card style={{ margin: '1rem', padding: ' 1rem' }}>
-                  <ContactItem key={contact.id} contact={contact} />
+                  <ContactItem key={contact._id} contact={contact} />
                 </Card>
               </Grid>
             ))
@@ -35,7 +35,7 @@ const Contacts = () => {
                     padding: ' 1rem',
                   }}
                 >
-                  <ContactItem key={contact.id} contact={contact} />
+                  <ContactItem key={contact._id} contact={contact} />
                 </Card>
               </Grid>
             ))}
