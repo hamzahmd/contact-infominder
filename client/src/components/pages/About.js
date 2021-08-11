@@ -14,7 +14,8 @@ const About = () => {
           This is a Full stack MERN application with React hooks, context and
           JWT authentication. In this application, you can store and manage you
           contact details and information by creating your own account with
-          authentication and no one can see the details except you.
+          authentication. The Contacts have full CRUD functionalities and are
+          linked with the database.
         </p>
         <div>
           <Chip label='MERN' color='primary' style={{ marginTop: '0.5rem' }} />
