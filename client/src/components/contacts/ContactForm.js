@@ -89,12 +89,11 @@ const ContactForm = () => {
           <Box pt={2} pb={2}>
             <TextField
               id='outlined-basic'
-              type='number'
+              type='tel'
               label='Phone'
               size='small'
               name='phone'
               variant='outlined'
-              // pattern='+[0-9]{2}-[0-9]{3}-[0-9]{7}'
               value={phone}
               onChange={onChange}
             />
