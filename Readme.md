@@ -6,7 +6,7 @@ This is a Full stack MERN application with React hooks, context and JWT authenti
 
 The application is hosted on Heroku
 
-![Login Page](https://drive.google.com/drive/u/0/folders/1Kybl57FoV3Q046W9M7M465fVRjY53_CQ)
+![Login Page](https://drive.google.com/file/d/1oDC_xM6Wh3ObrV0wp1MJfjTzEPFSN_3U/view?usp=sharing)
 
 ## Highlights
 
