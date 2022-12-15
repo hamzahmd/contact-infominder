@@ -2,7 +2,7 @@
 
 This is a Full stack MERN application with React hooks, context and JWT authentication. In this application, you can store and manage you contact details and information by creating your own account with authentication. The Contacts have full CRUD functionalities and are linked with the database.
 
-### [Live Preview](https://infominder.herokuapp.com/register)
+### [Live Preview](https://infominder.onrender.com/register)
 
 ![Overview](https://i.ibb.co/HGGR6WQ/projects-mern1.png)
 
@@ -39,7 +39,7 @@ All these dependencies are installed by the Node Package Manager (NPM)
 
 ## Hosting
 
-The application is hosted on Heroku with heroku cli.
+Contact Infominder application was previously hosted on Heroku with heroku cli. Now it is deployed on Render.
 
 ## Usage
 
